@@ -2,9 +2,9 @@ import React from 'react'
 import '../App.css' 
 
 function List({ transactions }) {
-  let listToDisplay = transactions.map(transaction => {
+  let listToDisplay = transactions.map((transaction, index) => {
     return (
-      <div className="transaction-card" key={transaction.id}>
+      <div className="transaction-card" key={index}>
         <p><strong>Date:</strong> {transaction.date}</p>
         <p><strong>Amount:</strong> {transaction.amount}</p>
         <p><strong>Category:</strong> {transaction.category}</p>
