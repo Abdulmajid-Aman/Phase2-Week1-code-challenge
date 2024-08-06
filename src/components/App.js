@@ -1,39 +1,40 @@
-import React, { useEffect, useState } from 'react'
-import List from './List'
-import Form from "./Form"
-
+import React, { useEffect, useState } from 'react';
+import List from './List';
+import Form from './Form';
 
 function App() {
-  const [transactions, setTransactions] = useState([])
-  const [newTransactions , setNewTransactions] = useState([])
+  const [transactions, setTransactions] = useState([]);
+  const [newTransaction, setNewTransaction] = useState(null);
 
   function dataPassedBack(value) {
-   setNewTransactions(value)
-   console.log(value);
+    setNewTransaction(value);
+    console.log(value);
   }
-  
-  
-   useEffect(() => {
+
+  useEffect(() => {
     fetch('http://localhost:3000/transactions')
-    .then(res => res.json())
-    .then(data => setTransactions(data))
-   }, [])
+      .then(res => res.json())
+      .then(data => setTransactions(data))
+      .catch(err => console.error("Error fetching transactions:", err));
+  }, []);
 
-   let newArray = [...transactions, newTransactions]
-   console.log(newArray);
- 
-    
-   let nextId = Math.floor(Math.random()*50)
-   let id = nextId.toString()
+  useEffect(() => {
+    if (newTransaction) {
+      setTransactions(prevTransactions => [newTransaction, ...prevTransactions]);
+      setNewTransaction(null);
+    }
+  }, [newTransaction]);
 
+ let nextId = Math.floor(Math.random() * 1000)
+
+  
 
   return (
-     <> 
-        <List  transactions = {newArray}/>
-        <Form  dataPassedBack = {dataPassedBack}  nextId = {id}/>
-        
-     </>
-  )
+    <> 
+      <List transactions={transactions} />
+      <Form dataPassedBack={dataPassedBack} nextId={nextId} />
+    </>
+  );
 }
 
-export default App
+export default App;
