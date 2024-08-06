@@ -14,9 +14,12 @@ function List({ transactions }) {
   });
 
   return (
+    <>
+    <h1 className='header'>Your Transactions</h1>
     <div className="transaction-list">
       {listToDisplay}
     </div>
+    </>
   )
 }
 

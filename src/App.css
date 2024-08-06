@@ -27,6 +27,11 @@
   margin: 0 auto; 
 }
 
+.header { 
+  text-align: center;
+  text-decoration: underline;
+}
+
 /* Text styling within the card */
 .transaction-card p {
   margin: 0 0 10px;
