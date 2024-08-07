@@ -1,70 +1,116 @@
-# Getting Started with Create React App
+# Transaction Tracker App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Live page to the webiste 
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+The Transaction Tracker App is a React-based application designed to help users manage and track their financial transactions. It provides functionalities for adding, viewing, searching, and deleting transactions. This app serves as a practical tool for personal finance management and can be extended to include more advanced features.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Add Transactions**: Input details such as date, description, amount, and category to add new transactions.
+- **View Transactions**: Display a list of all transactions with details including date, amount, category, and description.
+- **Search Transactions**: Filter transactions by description to find specific entries easily.
+- **Delete Transactions**: Remove unwanted transactions from the list.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
 
-### `npm test`
+- **React**: JavaScript library for building user interfaces.
+- **JavaScript**: Programming language used for logic and interactions.
+- **CSS**: Stylesheet language for styling the components.
+- **Fetch API**: For making HTTP requests to a backend server.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Ensure you have the following installed on your machine:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Node.js** (v14 or higher) - [Node.js Downloads](https://nodejs.org/)
+- **npm** (v6 or higher) or **Yarn** - Included with Node.js
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Installation
 
-### `npm run eject`
+1. **Clone the Repository**
+    ```bash
+    git clone [https://github.com/Abdulmajid-Aman/Phase2-Week1-code-challenge] (https://github.com/Abdulmajid-Aman/Phase2-Week1-code-challenge)
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. **Navigate to the Project Directory**
+    ```bash
+    cd Phase-2
+    cd Week-1
+    ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. **Install Dependencies**
+    ```bash
+    npm install
+    ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Running the Application
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. **Start the Development Server**
+    ```bash
+    npm start
+    ```
 
-## Learn More
+2. **Open Your Browser**
+   - Navigate to `http://localhost:3000` to view the application in action.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Project Structure
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The project is organized into the following main components:
 
-### Code Splitting
+- **`App.js`**: The root component that manages the state and renders the `List` and `Form` components.
+- **`List.js`**: Component responsible for displaying the list of transactions and handling their deletion.
+- **`Form.js`**: Component for the transaction input form, allowing users to add new transactions.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### API Integration
 
-### Analyzing the Bundle Size
+The app interacts with the backend server using the following API endpoints:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- **`GET /transactions`**: Fetches the list of all transactions.
+- **`POST /transactions`**: Adds a new transaction to the server.
+- **`DELETE /transactions/:id`**: Deletes a specific transaction by its ID.
 
-### Making a Progressive Web App
+### Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+To add a new transaction:
 
-### Advanced Configuration
+1. **Fill Out the Form**: Enter the date, description, amount, and category of the transaction.
+2. **Submit the Form**: Click "Submit" to add the transaction to the list.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+To search transactions:
 
-### Deployment
+1. **Enter Search Term**: Type in a description to filter the list of transactions.
+2. **View Results**: The list updates to show only transactions that match the search term.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+To delete a transaction:
 
-### `npm run build` fails to minify
+1. **Find the Transaction**: Locate the transaction you wish to delete in the list.
+2. **Click Delete**: Press the "Delete Transaction" button next to the transaction to remove it.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Example
+
+Here's a brief example of how the application looks and functions:
+
+1. **Add Transaction**
+    - Date: 2024-08-07
+    - Description: Dinner at Restaurant
+    - Amount: $45.00
+    - Category: Food
+
+2. **Search Transactions**
+    - Enter "Dinner" in the search bar to filter transactions by description.
+
+3. **Delete Transaction**
+    - Click "Delete Transaction" to remove an entry from the list.
+
+
+### License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+
+
+
