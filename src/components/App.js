@@ -42,6 +42,7 @@ function App() {
   }, [filteredTransactions]);
 
   let nextId = Math.floor(Math.random() * 1000);
+  let id = nextId.toString()
 
   return (
     <div className="container">
@@ -54,7 +55,7 @@ function App() {
           <List transactions={searchTransactions.length > 0 ? searchTransactions : transactions} />  
         </div>
         <div className="form-container">
-          <Form dataPassedBack={dataPassedBack} nextId={nextId} />
+          <Form dataPassedBack={dataPassedBack} nextId={id} />
         </div>
       </div>
     </div>
