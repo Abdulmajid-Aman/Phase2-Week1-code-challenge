@@ -2,6 +2,7 @@ import React from 'react'
 import '../App.css' 
 
 function List({ transactions }) {
+  console.log(transactions);
   let listToDisplay = transactions.map((transaction, index) => {
     return (
       <div className="transaction-card" key={index}>

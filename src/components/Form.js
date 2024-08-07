@@ -17,7 +17,7 @@ function Form({ dataPassedBack, nextId }) {
 
   function handleData(e) {
     e.preventDefault();
-    fetch('http://localhost:3000/transactions', {
+    fetch('https://bank-backend-drab.vercel.app/transactions', {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -40,26 +40,26 @@ function Form({ dataPassedBack, nextId }) {
     <form className="form-container" onSubmit={handleData}>
           <h2 className='form-header'>Add a new Transactions</h2>
       <label htmlFor='date'>Date</label><br />
-      <input type='date' name='date' value={formData.date} onChange={handleChange} /><br />
+      <input type='date' name='date' value={formData.date} onChange={handleChange} required /><br />
 
       <label htmlFor='description'>Description</label><br />
-      <textarea name='description' value={formData.description} cols={50} rows={4} placeholder='Enter the description of your statement' onChange={handleChange}></textarea><br />
+      <textarea name='description' value={formData.description} cols={50} rows={4} required placeholder='Enter the description of your statement' onChange={handleChange}></textarea><br />
 
       <label htmlFor='amount'>Amount: </label><br />
-      <input type='number' name='amount' value={formData.amount} onChange={handleChange} /><br />
+      <input type='number' name='amount' value={formData.amount} onChange={handleChange}  required /><br />
 
       <label htmlFor='category'>Category</label><br />
-      <select value={formData.category} name='category' onChange={handleChange}>
+      <select value={formData.category} name='category' onChange={handleChange} required >
         <optgroup label='Deposit'>
           <option value='income'>Income</option>
           <option value='savings'>Savings</option>
         </optgroup>
-        <optgroup label='Expenses'>
-          <option value='fashion'>Fashion</option>
-          <option value='food'>Food</option>
-          <option value='gift'>Gift</option>
-          <option value='transportation'>Transportation</option>
-          <option value='entertainment'>Entertainment</option>
+        <optgroup label='Withdrawals'>
+          <option value='Fashion'>Fashion</option>
+          <option value='Food'>Food</option>
+          <option value='Gift'>Gift</option>
+          <option value='Transportation'>Transportation</option>
+          <option value='Entertainment'>Entertainment</option>
         </optgroup>
       </select><br />
 
