@@ -8,6 +8,15 @@ function App() {
   const [newTransaction, setNewTransaction] = useState(null);
   const [filteredTransactions, setFilteredTransactions] = useState('');
   const [searchTransactions, setSearchTransactions] = useState([]);
+  const [text, setText] = useState(true);
+  const [display, setDisplay] = useState(true);
+
+  function handleClick() {
+    setText(!text);
+    setDisplay(!display);
+  }
+
+
 
   function handleFilter(e) {
     setFilteredTransactions(e.target.value);
@@ -43,20 +52,22 @@ function App() {
 
   let nextId = Math.floor(Math.random() * 1000);
   let id = nextId.toString()
+  
 
   return (
+    
     <div className="container">
       <div className="input-container">
         <h2 className='app-header'>Search a Transactions</h2>
         <input type='text' placeholder='Enter a transaction' onChange={handleFilter} />
       </div>
-      <div className="main-content">
-        <div className="list-container">
+      <button onClick={handleClick}>{text ? "Add Transaction" : "See Transactions" }</button>
+      <div className="main-content" >
+      {display ? <div className="list-container">
           <List transactions={searchTransactions.length > 0 ? searchTransactions : transactions} />  
-        </div>
-        <div className="form-container">
+        </div> :   <div className="form-container">
           <Form dataPassedBack={dataPassedBack} nextId={id} />
-        </div>
+        </div>}
       </div>
     </div>
   );
