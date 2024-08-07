@@ -21,25 +21,18 @@ The Transaction Tracker App is a React-based application designed to help users 
 - **Fetch API**: For making HTTP requests to a backend server.
 
 ## Getting Started
-
-### Prerequisites
-
-Ensure you have the following installed on your machine:
-
-- **Node.js** (v14 or higher) - [Node.js Downloads](https://nodejs.org/)
-- **npm** (v6 or higher) or **Yarn** - Included with Node.js
-
 ### Installation
 
 1. **Clone the Repository**
     ```bash
-    git clone [https://github.com/Abdulmajid-Aman/Phase2-Week1-code-challenge] (https://github.com/Abdulmajid-Aman/Phase2-Week1-code-challenge)
+    git clone https://github.com/Abdulmajid-Aman/Phase2-Week1-code-challenge
     ```
 
 2. **Navigate to the Project Directory**
     ```bash
     cd Phase-2
     cd Week-1
+    code .
     ```
 
 3. **Install Dependencies**
@@ -55,7 +48,7 @@ Ensure you have the following installed on your machine:
     ```
 
 2. **Open Your Browser**
-   - Navigate to `http://localhost:3000` to view the application in action.
+   - Navigate to `https://phase2-week1-code-challenge-tau.vercel.app/` to view the application in action.
 
 ### Project Structure
 
