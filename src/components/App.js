@@ -5,7 +5,7 @@ import '../App.css';
 
 function App() {
   const [transactions, setTransactions] = useState([]);
-  const [newTransaction, setNewTransaction] = useState(null);
+  const [newTransaction, setNewTransaction] = useState([]);
   const [filteredTransactions, setFilteredTransactions] = useState('');
   const [searchTransactions, setSearchTransactions] = useState([]);
   const [text, setText] = useState(true);
